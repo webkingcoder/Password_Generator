@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: rgba(102, 255, 0, 0.425);
+}
+@media screen and (max-width:400px){
+    .btn{
+        color: red;
+    }
+}
+.inputbox{
+    /* position: relative; */
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    width: 80%;
+    border-radius: 4vw;
+    /* border: 2px solid red; */
+    overflow: hidden;
+}
+.inputbox h1{
+    font-size: 6vw;
+    height: auto;
+    text-shadow: 2px 2px 60px rgba(0, 0, 0, 0.6);
+}
+.inputbox input{
+    text-align: center;    
+    /* position: relative; */
+    margin: 2em auto 2em;
+    width: fit-content;
+    background: transparent;
+    height: auto;
+    font-size: 3vw;
+    border: none;
+    outline: none;
+    box-shadow: -4px -4px 15px rgba(255, 255, 255, 0.5),
+        inset 4px 4px 15px rgba(0, 0, 0, 0.1),
+        inset -4px -4px 15px rgba(255, 255, 255, 0.5),
+        4px 4px  15px rgba(0, 0, 0, 0.1);
+    }
+    input{
+        position: relative;
+    }
+    .inputbox .btn{
+    padding: 1rem;
+    font-size: 2vw;
+    text-transform: uppercase;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 2vw;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+.copy{
+    width: 2.5vw;
+    position: relative;
+    top:0.1vh;
+    right: 4vw;
+    cursor: pointer;
+}

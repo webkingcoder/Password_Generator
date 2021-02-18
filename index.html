@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password-Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="inputbox">
+        <h1>Password Generator</h1>
+        <div class="inputdiv">    
+            <input type="text" readonly id="input" placeholder="Password Generator">
+            <img src="./copy.jfif" onclick="copypass()" class="copy" alt="">
+        </div>
+        <button class="btn" onclick="generate() , colorcng()">generator</button>
+        <span id="span"></span>
+    </div>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".inputbox"), {
+            max: 25,
+            speed: 400,
+            glare:true,
+            scale:1.5,
+            "max-glare":0.5, 
+        });
+    </script>
+
+    <script>
+        function generate(){
+        var char = "1234567890abcdefghijklmnopqrstuvwxzyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()";
+        var count = 8;
+        var password = "";
+        for(i=0;i<count;i++){
+            var randompass = Math.floor(Math.random()*char.length)
+            password += char.substring(randompass,randompass+1) 
+        }
+        document.querySelector("#input").value=password;
+    }
+
+        function colorcng(){
+            var bg = document.querySelector(".inputbox")
+        var heading = document.querySelector("h1")
+        var color = ""
+        var colornum ='1234567890abcdef';
+        for(var i=0;i<6;i++){
+            var randcol = Math.floor(Math.random()*colornum.length)
+            color += colornum.substring(randcol,randcol+1);
+            // document.querySelector("#span").innerText=color;
+            // bg.style.background = "red";
+            heading.style.color = "#"+color
+            }
+    }
+    function copypass(){
+        var copyimg = document.querySelector(".copy")
+        var copypass = document.querySelector("#input")
+        copypass.select()
+        copypass.setSelectionRange(0,99999)
+        document.execCommand("copy")
+        copypass.classList.toggle(".active")
+        alert("Password copied successfully")
+    }
+    </script>
+</body>
+</html>
